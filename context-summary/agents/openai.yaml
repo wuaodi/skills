@@ -1,0 +1,4 @@
+interface:
+  display_name: "Context Summary"
+  short_description: "Maintain project CONTEXT.md across sessions"
+  default_prompt: "Use $context-summary to initialize or refresh the project CONTEXT.md for this workspace."
