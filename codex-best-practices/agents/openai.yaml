@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Best Practices"
+  short_description: "Apply OpenAI Codex best-practice workflow to a task."
+  default_prompt: "Use $codex-best-practices to turn this request into a clear Codex brief, execution plan, and reusable guidance recommendation."
