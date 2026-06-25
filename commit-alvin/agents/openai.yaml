@@ -1,0 +1,4 @@
+interface:
+  display_name: "Commit Alvin"
+  short_description: "按固定中文格式提交并推送 git 改动。"
+  default_prompt: "Use $commit-alvin to commit current changes with the required Chinese message format and then push."
