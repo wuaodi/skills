@@ -22,7 +22,7 @@ AI 写的文字有一批高度重复的固定模式。这个技能先教怎么�
 delve, dive into / deep dive, leverage, harness, robust, seamless, streamline, empower, foster, elevate, unlock, navigate, unleash, boasts, nestled, realm, landscape, tapestry, testament, underscore, pivotal, crucial, vital, game-changer, cutting-edge, state-of-the-art, holistic, myriad, plethora。
 
 中文营销/黑话词：
-赋能、抓手、闭环、生态、链路、飞轮、范式、颗粒度、心智、维度、沉浸式、一键、打造、助力、护航、深耕、精准、高效便捷、全方位、多维度。
+口径、赋能、抓手、闭环、生态、链路、飞轮、范式、颗粒度、心智、维度、沉浸式、一键、打造、助力、护航、深耕、精准、高效便捷、全方位、多维度。
 
 ### 二、开场套话
 
