@@ -25,5 +25,19 @@
 - 保持代码的高可读性，方便研究人员快速理解逻辑。
 - 不需要过度的工程化边界保护（异常处理、参数校验等），优先实现核心功能。
 
+## 系统环境与编码
+
+- 操作系统为 Windows 11。
+- 始终使用 UTF-8 读写仓库文件，终端中文默认使用 UTF-8 编码，避免中文乱码（必要时执行 `chcp 65001`）。
+- PowerShell 命令中在可行时显式指定 UTF-8 输入输出，不依赖系统默认代码页。
+
+## GitLab: code.morphic.cn
+
+- 该 GitLab 主机的 git 鉴权走 Windows 凭据管理器（GCM）缓存凭据，无需在命令里附带令牌。
+- 已验证 `git fetch` 与 `git push --dry-run` 均通过（exit 0），具备读写权限。
+- 本地仓库示例：`d:\moqi\mbot_claw`（分支 `dev_alvin`）。
+- 注意 `glft-` 开头的是 GitLab feed token，不能用于 git 操作；若 GCM 缓存失效，需改用 `glpat-` 开头的 Personal Access Token（scope: `write_repository`）。
+- 查看 GCM 当前缓存：`cmdkey /list | findstr morphic`
+
 # html
 如果写html使用浅色好看风格，高雅耐看
