@@ -1,0 +1,4 @@
+interface:
+  display_name: "No AI"
+  short_description: "识别并去掉文字里的 AI 口癖套路，改写得像真人自然表达。"
+  default_prompt: "Use $no-ai to strip AI writing tells from the given text and make it read like a human wrote it, keeping the original meaning and technical precision."
