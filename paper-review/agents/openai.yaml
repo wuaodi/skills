@@ -1,0 +1,4 @@
+interface:
+  display_name: "Paper Review"
+  short_description: "以审稿人视角系统 review 论文，输出分级问题清单与修改建议，中英文通用。"
+  default_prompt: "Use $paper-review to review the given paper for logical consistency, evidence sufficiency, writing quality, figure/table quality, citation correctness (including hallucinated references), clear definitions, AI-flavor removal, redundancy, and low-level errors, then return a severity-ranked report with concrete fixes."
