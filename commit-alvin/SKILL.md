@@ -26,8 +26,8 @@ description: 按固定中文格式提交并推送 git 改动。当用户要求 c
 
 处理大数据的固定做法是外置归档，不用 git LFS：
 
-1. 在仓库根目录下按相对路径打 zip（例如 `实验数据/`、`runtime_logs/trace/` 原样进包），用户把 zip 放到自己的 NAS。
-2. 对应目录写进 `.gitignore`，仓库里保留一份还原说明（zip 名称、内容清单、解压方式：下载后在仓库根目录直接解压即合并还原）。
+1. 在仓库根目录下按相对路径打 zip（例如 `实验数据/`、`runtime_logs/trace/` 原样进包），用户把 zip 上传到百度网盘 `Alvin/git大文件/` 下与远程仓库同名的文件夹里（例如远程是 `SpaceMind-Myself`，就放在 `Alvin/git大文件/SpaceMind-Myself/`）。
+2. 对应目录写进 `.gitignore`，仓库里保留一份还原说明（网盘路径、zip 名称、内容清单、解压方式：下载后在仓库根目录直接解压即合并还原）。
 3. 打包用 store 模式即可（视频等已压缩格式再压缩没有收益），例如 `tar -a -cf xxx.zip 目录/` 或 zip `-0`。
 
 修改 `.gitignore` 时只追加规则，不删已有规则；已被 git 追踪的文件加 ignore 不会生效，需要 `git rm --cached` 后再提交，动手前先和用户确认。
