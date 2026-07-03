@@ -8,10 +8,29 @@ description: 按固定中文格式提交并推送 git 改动。当用户要求 c
 ## 工作流
 
 1. 提交前先读取改动范围：`git status`、`git diff`、`git diff --staged`，并看几条近期 `git log` 以对齐历史风格。
-2. 把需要提交的文件加入暂存区。不要主动加入疑似密钥或环境文件（`.env`、credential、token 等），如果这类文件已被改动，先提醒用户。
-3. 按下面的格式写 commit message，标题日期用当天日期。
-4. 提交成功后推送：已有上游分支用 `git push`，首次推送用 `git push -u origin HEAD`。
-5. 不做 force push、不跳过 hook、不改 git config。push 失败时只报告原因和下一步，不擅自重试破坏性命令。
+2. 按下面「忽略与大文件」一节检查待提交内容，不合规的先处理再暂存。
+3. 把需要提交的文件加入暂存区。不要主动加入疑似密钥或环境文件（`.env`、credential、token 等），如果这类文件已被改动，先提醒用户。
+4. 按下面的格式写 commit message，标题日期用当天日期。
+5. 提交成功后推送：已有上游分支用 `git push`，首次推送用 `git push -u origin HEAD`。
+6. 不做 force push、不跳过 hook、不改 git config。push 失败时只报告原因和下一步，不擅自重试破坏性命令。
+
+## 忽略与大文件
+
+目标是仓库里只留源码、配置和少量必要资源，保证别人 clone 后能复现，同时不被大文件拖垮。
+
+提交前检查暂存区，发现以下内容就不要提交，改为加进 `.gitignore`：
+
+1. 可重新生成的编译或运行产物：`__pycache__`、`build/`、`dist/`、LaTeX 编译出的 pdf/synctex/bbl、缓存、临时文件。
+2. 运行日志和实验记录：`*.log`、trace、录屏、截图批量输出等。
+3. 大体积媒体和数据：视频、数据集、模型权重、压缩包。单文件超过 10MB 要先问用户是否必要，超过 50MB 一律不进 git（GitHub 单文件上限 100MB，会直接推送失败）。
+
+处理大数据的固定做法是外置归档，不用 git LFS：
+
+1. 在仓库根目录下按相对路径打 zip（例如 `实验数据/`、`runtime_logs/trace/` 原样进包），用户把 zip 放到自己的 NAS。
+2. 对应目录写进 `.gitignore`，仓库里保留一份还原说明（zip 名称、内容清单、解压方式：下载后在仓库根目录直接解压即合并还原）。
+3. 打包用 store 模式即可（视频等已压缩格式再压缩没有收益），例如 `tar -a -cf xxx.zip 目录/` 或 zip `-0`。
+
+修改 `.gitignore` 时只追加规则，不删已有规则；已被 git 追踪的文件加 ignore 不会生效，需要 `git rm --cached` 后再提交，动手前先和用户确认。
 
 ## Commit 格式
 
@@ -33,20 +52,6 @@ YYYYMMDD 新增：一句话说明
 后续验证：说明其他人应在什么环境下运行什么命令继续验证。
 ```
 
-## 示例
-
-```text
-20260625 新增：MCP 动作冒烟测试脚本
-
-目的：在提交前快速确认动作 MCP 通路可用，避免回归。
-
-更改：1、新增 smoke_test_actions_mcp.py 跑通连接与基础调用 2、补充超时与失败时的清晰报错 3、在 TOOLS.md 登记该脚本用途。
-
-验证：本地 python scripts/smoke_test_actions_mcp.py 通过，退出码 0。
-
-后续验证：在装好依赖的环境里 cd 到仓库根目录运行 python scripts/smoke_test_actions_mcp.py，看到全部用例 OK 即可。
-```
-
 ## 提交信息写法
 
 用 HEREDOC 传多行 message，保证换行正确：
@@ -57,7 +62,10 @@ git commit -m "$(cat <<'EOF'
 
 目的：...
 
-更改：1、... 2、... 3、...
+更改：
+1、... 
+2、... 
+3、...
 
 验证：...
 
