@@ -75,6 +75,10 @@ delve, dive into / deep dive, leverage, harness, robust, seamless, streamline, e
 - 过度对称的排比长句，一段里句式完全平行。
 - whether you're X or Y… / when it comes to X…
 
+### 九 术语
+- 不要出现太多的工程化术语 phase_a run_xxx 代码模块名称
+- 在学术论文写作的时候, 符合学术化的术语规范
+
 ## 去 AI 味工作流
 
 1. 通读原文，对照上面八类标出 AI tell 的地方。
