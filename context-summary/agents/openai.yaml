@@ -1,4 +1,4 @@
 interface:
-  display_name: "Context Summary"
-  short_description: "Maintain project CONTEXT.md across sessions"
-  default_prompt: "Use $context-summary to initialize or refresh the project CONTEXT.md for this workspace."
+  display_name: "项目交接"
+  short_description: "精简维护项目上下文、关键入口和下一步，帮助跨会话继续工作。"
+  default_prompt: "使用 $context-summary 更新这个项目的 CONTEXT.md，保留关键决策、入口和下一步。"

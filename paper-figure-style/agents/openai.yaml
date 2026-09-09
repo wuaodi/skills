@@ -1,4 +1,0 @@
-interface:
-  display_name: "Paper Figure Style"
-  short_description: "Top-conference (CVPR/ICCV/ECCV/ICRA/IROS) figure style and prompt templates"
-  default_prompt: "Use $paper-figure-style to write a publication-quality figure prompt for my paper figure."

@@ -1,4 +1,0 @@
-interface:
-  display_name: "Review Alvin"
-  short_description: "对最近提交或当前改动做自主验证和风险审查。"
-  default_prompt: "Use $review-alvin to autonomously verify and risk-review the latest commit or current changes."

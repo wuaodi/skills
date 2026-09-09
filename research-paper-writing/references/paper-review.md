@@ -1,86 +1,28 @@
-# Paper Review (Paper Rview)
+# 论文审阅
 
-## Goal
+先根据用户范围读取正文、图表及参考文献。记录未提供或无法访问的材料，只有局部内容时限定结论范围。
 
-Use an adversarial, reviewer-style checklist to detect reject risks early and revise the paper before submission.
+## 核心核查
 
-## Core Principle
+- 论证是否从问题连到方法和证据；新增贡献与已有工作是否区分，方法假设是否合理。
+- 摘要、引言和结论的主要主张是否有实验、推导或引用支撑；数字和提升幅度是否一致。
+- 对比协议是否公平，关键消融是否支持所声称的机制，泛化或效率结论是否超出测量范围。
+- 符号、定义、维度、训练与推理过程是否足以理解和复现。图表是否与正文、图注、编号和单位一致。
+- 表达是否掩盖机制、重复堆砌或夸大意义。措辞模式只能说明风格问题，不能据此判定作者是否使用 AI。
+- 有 LaTeX 源码时，检查缺失引用、标签、图片及明显排版错误；需要编译时使用已有命令并报告结果。
 
-Pursue perfectionism in paper quality: assume reviewers will probe every weak point and proactively fix them.
+## 引用核验
 
-## Critical Rule (Do Not Violate)
+区分文献真实存在与引用确实支持该主张。通过 DOI、出版方、arXiv 或 DBLP 等来源核对标题、作者、年份和标识符；支撑关系需读对应摘要或原文，不能仅凭检索标题判断。
 
-Every major claim, especially in Abstract and Introduction, must be:
+全面审稿或明确要求查文献时逐条核验；局部审阅只核对应条目并说明覆盖范围。无网络、未找到或无法访问时标记“未核验”或“存在疑点”，不直接断言虚假，也不补造条目。
 
-1. technically correct, and
-2. explicitly supported by experimental evidence.
+## 输出
 
-If a claim is not supported, either add evidence or weaken/remove the claim.
+先用一段话指出最影响论文成立的风险，再按严重程度列问题。每条给出位置、依据、影响和具体改法：
 
-## What Usually Gets a Paper Accepted
+- 严重：事实、逻辑、证据或引用错误，影响结论成立。
+- 建议：影响理解、复现或论证强度。
+- 可选：不影响成立的表达和排版优化。
 
-1. Sufficient contribution (for example: novel task, novel pipeline, novel module, novel design choices, new experimental findings, or new insight).
-2. Better empirical performance than prior methods under fair comparisons.
-3. Sufficient comparison experiments and ablation studies.
-
-## Common Rejection Dimensions
-
-| Rejection Dimension          | Typical Failure Signals                                                                                                                                                                                                                                                                    |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 1. Insufficient contribution | 1.1 Targeted failure cases are too common.<br /> 1.2 Proposed technique is already well explored; expected gains are predictable/well-known.                                                                                                                                               |
-| 2. Unclear writing           | 2.1 Missing technical details; work is not reproducible.<br />2.2 A method module lacks clear motivation.                                                                                                                                                                                  |
-| 3. Weak empirical effect     | 3.1 Improvement over prior methods is only marginal.<br /> 3.2 Even if better than previous methods, absolute performance is still not strong enough.                                                                                                                                      |
-| 4. Incomplete evaluation     | 4.1 Missing ablation studies.<br />4.2 Missing important baselines or important evaluation metrics.<br /> 4.3 Datasets are too simple to prove the method truly works.                                                                                                                    |
-| 5. Problematic method design | 5.1 Experimental setting is unrealistic.<br />5.2 Method has technical flaws and appears unreasonable.<br />5.3 Method is not robust and needs per-scenario hyperparameter tuning. <br /> 5.4 New design introduces stronger limitations than its benefits, leading to negative net value. |
-
-## End-of-Paper Self-Review Question List
-
-Add this checklist near the end of the draft while revising.
-Use each question to trigger concrete edits before submission.
-
-### 1. Contribution
-
-1. What new knowledge does this paper give to readers?
-2. Are we solving a truly meaningful failure case, not a trivial/common one?
-3. Is the technical idea genuinely non-obvious beyond well-explored practice?
-4. Is our gain surprising or insightful rather than a predictable improvement?
-5. Is there at least one clear novelty type (task/pipeline/module/design finding/insight)?
-
-### 2. Writing Clarity
-
-1. Can a knowledgeable reader reproduce the method from the paper?
-2. Did we provide enough technical detail for each key module?
-3. Is the motivation of every module explicit and logically connected to a challenge?
-4. Are terms and notation consistent across sections?
-5. Does each paragraph carry one clear message with smooth transitions?
-
-### 3. Experimental Strength
-
-1. Are improvements over strong baselines meaningful, not just statistically tiny?
-2. Is absolute performance competitive enough for the target venue?
-3. Are gains consistent across multiple datasets/settings/metrics?
-4. Do we report both strengths and failure cases honestly?
-
-### 4. Evaluation Completeness
-
-1. Do we include ablations for all key design choices?
-2. Are all strong/recent baselines included under fair settings?
-3. Are evaluation metrics standard and sufficient for this task?
-4. Are datasets/scenarios challenging enough to validate real effectiveness?
-5. Are comparison and ablation protocols clearly documented?
-
-### 5. Method Design Soundness
-
-1. Is the experimental setting realistic for practical use?
-2. Does the method have hidden technical defects or unreasonable assumptions?
-3. Is the method robust without heavy per-case hyperparameter retuning?
-4. Do benefits outweigh added complexity and new limitations?
-5. Could reviewers reasonably argue that the net benefit is negative?
-
-## Adversarial Writing Workflow
-
-1. Read the paper as a skeptical reviewer.
-2. Answer every question above with explicit evidence from the paper.
-3. Mark each item as `pass`, `needs revision`, or `needs new experiment`.
-4. Revise claims, writing, experiments, or method scope accordingly.
-5. Repeat until no major rejection risk remains.
+有多项主张需对照时再附“主张、证据位置、状态”表；文献核验仅列疑点及必要的来源，概括已核查范围。没有发现问题时如实说明已查范围，不凑条数。审阅本身不授权修改论文或启动新的实验。

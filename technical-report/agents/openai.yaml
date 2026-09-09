@@ -1,0 +1,4 @@
+interface:
+  display_name: "技术汇报与方案"
+  short_description: "编写约三页的 Markdown 汇报、方案或代码架构说明，包含 Mermaid 图。"
+  default_prompt: "使用 $technical-report 将当前材料整理为约三页、三至四章的 Markdown 文档，包含 Mermaid 架构图，用于汇报和讨论。"
