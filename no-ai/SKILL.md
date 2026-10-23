@@ -107,3 +107,6 @@ delve, dive into / deep dive, leverage, harness, robust, seamless, streamline, e
 - 保持原文的语言和大致语气：中文改后还是中文，正式的保持正式。
 - 目标是自然清楚，不是刻意口语或刻意简陋。
 
+## 避免防御性写作
+- 如果某句话的作用只是防止被质疑，而不是推进论证，请删除
+
