@@ -1,4 +1,4 @@
 interface:
   display_name: "中文 Git 提交"
-  short_description: "按个人中文格式提交代码，保留大文件外置归档与验证记录约定。"
+  short_description: "按个人中文格式提交代码，排除大文件，仅在明确要求时生成归档包。"
   default_prompt: "使用 $commit-alvin 提交并推送本次改动，按中文格式记录目的、更改和实际验证。"
