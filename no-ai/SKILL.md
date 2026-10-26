@@ -22,7 +22,7 @@ AI 写的文字有一批高度重复的固定模式。这个技能先教怎么�
 delve, dive into / deep dive, leverage, harness, robust, seamless, streamline, empower, foster, elevate, unlock, navigate, unleash, boasts, nestled, realm, landscape, tapestry, testament, underscore, pivotal, crucial, vital, game-changer, cutting-edge, state-of-the-art, holistic, myriad, plethora。
 
 中文营销/黑话词：
-口径、赋能、抓手、闭环、生态、链路、飞轮、范式、颗粒度、心智、维度、沉浸式、一键、打造、助力、护航、深耕、精准、高效便捷、全方位、多维度、可审计。【这些是常见的但是不是所有的，你也可以自己想想还有什么别的】
+口径、赋能、抓手、闭环、生态、链路、飞轮、范式、颗粒度、心智、维度、沉浸式、一键、打造、助力、护航、深耕、精准、高效便捷、全方位、多维度、可审计。
 
 ### 二、开场套话
 
@@ -61,10 +61,12 @@ delve, dive into / deep dive, leverage, harness, robust, seamless, streamline, e
 - Emoji 当小标题或句尾装饰：✨🚀🔥✅。
 - 结尾一段升华 / 口号式总结。
 
-### 七、标点
+### 七、标点与装饰符号
 
 - 破折号滥用——像这样——到处往句子里插。
 - 大量括号（用来补充）（还层层嵌套）打断阅读。
+- 用「」、『』、【】等特殊括号给普通概念加框，或用 ☆、◆、▷、→ 等符号装饰正文、标题和结论。这类非必要标记按 AI 表达痕迹处理，直接删除，例如将「未知」改为未知。
+- 公式、代码、参考文献标注和有明确专业含义的符号按原义保留；实际引文中的标点遵循原文与写作规范。
 
 ### 八、修辞与语气
 
