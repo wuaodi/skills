@@ -1,4 +1,0 @@
-interface:
-  display_name: "论文写作与审阅"
-  short_description: "改写与审阅学术稿件，核查主张和引用，并统一论文图表表达。"
-  default_prompt: "使用 $research-paper-writing 处理这份论文材料，根据我的要求进行写作、审阅或图表设计。"
